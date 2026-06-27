@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Systems Engineer — Data Automation, Macro Engineering, and High-Efficiency Tooling Portfolio">
+<title>nande@systems ~ portfolio</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg-primary:#0a0a0a;
+--bg-secondary:#111111;
+--bg-tertiary:#181818;
+--bg-card:#0f0f0f;
+--border:#2a2a2a;
+--border-active:#3a3a3a;
+--text-primary:#d4d4d4;
+--text-secondary:#888888;
+--text-muted:#555555;
+--green:#39ff14;
+--green-dim:#1a7a0a;
+--amber:#ffbf00;
+--amber-dim:#7a5c00;
+--red:#ff3333;
+--cyan:#00e5ff;
+--mono:'Fira Code','JetBrains Mono','Cascadia Code','SF Mono','Consolas','Liberation Mono','Courier New',monospace;
+}
+html{font-size:14px;scroll-behavior:smooth}
+body{
+background:var(--bg-primary);
+color:var(--text-primary);
+font-family:var(--mono);
+line-height:1.7;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+-webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--green-dim);color:var(--green)}
+:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+a{color:var(--green);text-decoration:none;transition:color 0s}
+a:hover{color:var(--amber)}
+a:focus-visible{color:var(--amber)}
+
+.container{
+width:100%;
+max-width:1280px;
+margin:0 auto;
+padding:0 24px;
+}
+.divider{
+border:none;
+border-top:1px dashed var(--border);
+margin:0;
+}
+.section{padding:48px 0}
+.section-label{
+font-size:0.75rem;
+color:var(--text-muted);
+letter-spacing:0.15em;
+text-transform:uppercase;
+margin-bottom:24px;
+display:flex;
+align-items:center;
+gap:8px;
+}
+.section-label::before{content:"//";color:var(--green-dim)}
+
+header{
+border-bottom:1px solid var(--border);
+padding:32px 0;
+}
+.prompt-bar{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+gap:8px;
+font-size:0.8rem;
+color:var(--text-secondary);
+margin-bottom:24px;
+}
+.prompt-user{color:var(--green)}
+.prompt-path{color:var(--cyan)}
+.prompt-sep{color:var(--text-muted)}
+.status-tag{
+display:inline-flex;
+align-items:center;
+gap:6px;
+padding:2px 10px;
+border:1px solid var(--green-dim);
+font-size:0.7rem;
+color:var(--green);
+letter-spacing:0.05em;
+}
+.status-tag::before{
+content:"";
+width:6px;
+height:6px;
+background:var(--green);
+border-radius:50%;
+animation:pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot{
+0%,100%{opacity:1}
+50%{opacity:0.3}
+}
+.headline{
+font-size:clamp(1.4rem,4vw,2.2rem);
+font-weight:700;
+color:var(--text-primary);
+line-height:1.3;
+margin-bottom:8px;
+}
+.headline em{
+font-style:normal;
+color:var(--green);
+}
+.subheadline{
+font-size:0.85rem;
+color:var(--text-secondary);
+max-width:680px;
+}
+
+.profile-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:32px;
+}
+.profile-block h3{
+font-size:0.8rem;
+color:var(--text-muted);
+letter-spacing:0.1em;
+text-transform:uppercase;
+margin-bottom:12px;
+padding-bottom:8px;
+border-bottom:1px solid var(--border);
+}
+.profile-block p{
+font-size:0.85rem;
+color:var(--text-secondary);
+}
+.stat-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+}
+.stat-item{
+padding:12px;
+border:1px solid var(--border);
+}
+.stat-value{
+font-size:1.4rem;
+font-weight:700;
+color:var(--text-primary);
+}
+.stat-label{
+font-size:0.7rem;
+color:var(--text-muted);
+text-transform:uppercase;
+letter-spacing:0.08em;
+margin-top:4px;
+}
+
+.vault-controls{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-bottom:24px;
+}
+.filter-btn{
+background:transparent;
+border:1px solid var(--border);
+color:var(--text-secondary);
+font-family:var(--mono);
+font-size:0.75rem;
+padding:4px 14px;
+cursor:pointer;
+letter-spacing:0.05em;
+transition:border-color 0s,color 0s,background 0s;
+}
+.filter-btn:hover,.filter-btn.active{
+border-color:var(--green);
+color:var(--green);
+background:rgba(57,255,20,0.04);
+}
+.vault-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(360px,1fr));
+gap:1px;
+background:var(--border);
+border:1px solid var(--border);
+}
+.vault-card{
+background:var(--bg-card);
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:12px;
+transition:background 0s;
+}
+.vault-card:hover{
+background:var(--bg-tertiary);
+}
+.vault-card-header{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:12px;
+}
+.vault-card-title{
+font-size:0.9rem;
+font-weight:600;
+color:var(--text-primary);
+}
+.vault-card-type{
+font-size:0.65rem;
+color:var(--amber);
+border:1px solid var(--amber-dim);
+padding:1px 8px;
+white-space:nowrap;
+flex-shrink:0;
+}
+.vault-card-desc{
+font-size:0.78rem;
+color:var(--text-secondary);
+line-height:1.6;
+}
+.vault-card-tags{
+display:flex;
+flex-wrap:wrap;
+gap:6px;
+}
+.tag{
+font-size:0.65rem;
+color:var(--text-muted);
+padding:2px 8px;
+border:1px solid var(--border);
+}
+.vault-card-actions{
+display:flex;
+gap:12px;
+margin-top:auto;
+padding-top:8px;
+border-top:1px dashed var(--border);
+}
+.action-link{
+font-size:0.75rem;
+color:var(--green);
+display:inline-flex;
+align-items:center;
+gap:6px;
+padding:4px 0;
+}
+.action-link:hover{
+color:var(--amber);
+padding-left:4px;
+}
+.action-link::before{content:">";margin-right:2px}
+
+.connect-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:1px;
+background:var(--border);
+border:1px solid var(--border);
+}
+.connect-item{
+background:var(--bg-card);
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:4px;
+transition:background 0s;
+}
+.connect-item:hover{background:var(--bg-tertiary)}
+.connect-label{
+font-size:0.7rem;
+color:var(--text-muted);
+text-transform:uppercase;
+letter-spacing:0.1em;
+}
+.connect-value{
+font-size:0.85rem;
+color:var(--green);
+}
+.connect-item:hover .connect-value{color:var(--amber)}
+
+footer{
+border-top:1px solid var(--border);
+padding:16px 0;
+margin-top:auto;
+}
+.footer-row{
+display:flex;
+flex-wrap:wrap;
+justify-content:space-between;
+align-items:center;
+gap:16px;
+font-size:0.7rem;
+color:var(--text-muted);
+}
+.footer-meta{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+align-items:center;
+}
+.footer-indicator{
+display:inline-flex;
+align-items:center;
+gap:6px;
+}
+.dot-green{
+width:5px;height:5px;
+background:var(--green);
+border-radius:50%;
+display:inline-block;
+}
+.dot-amber{
+width:5px;height:5px;
+background:var(--amber);
+border-radius:50%;
+display:inline-block;
+}
+#utc-clock{
+font-variant-numeric:tabular-nums;
+color:var(--text-secondary);
+letter-spacing:0.05em;
+}
+
+.cursor-blink::after{
+content:"_";
+animation:blink 1s step-end infinite;
+color:var(--green);
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+@media(max-width:768px){
+html{font-size:13px}
+.container{padding:0 16px}
+.section{padding:32px 0}
+.profile-grid{grid-template-columns:1fr}
+.vault-grid{grid-template-columns:1fr}
+.stat-grid{grid-template-columns:1fr 1fr}
+.headline{margin-bottom:12px}
+.connect-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+.stat-grid{grid-template-columns:1fr}
+.vault-card-header{flex-direction:column}
+.footer-row{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<div class="prompt-bar">
+<span class="prompt-user">nande@systems</span>
+<span class="prompt-sep">:</span>
+<span class="prompt-path">~/portfolio</span>
+<span class="prompt-sep">$</span>
+<span>cat identity.conf</span>
+<span style="margin-left:auto">
+<span class="status-tag">AVAILABLE</span>
+</span>
+</div>
+<h1 class="headline">Data Systems <em>&amp;</em> High-Efficiency<br>Automation Engineering<span class="cursor-blink"></span></h1>
+<p class="subheadline">Building precision tooling that converts manual process overhead into deterministic, scriptable execution paths.</p>
+</div>
+</header>
+
+<hr class="divider">
+
+<section class="section" id="profile">
+<div class="container">
+<div class="section-label">sys.profile</div>
+<div class="profile-grid">
+<div class="profile-block">
+<h3>Operational Summary</h3>
+<p>Systems-oriented engineer focused on structural problem-solving across data pipelines, spreadsheet automation, and internal tooling. Emphasis on reducing manual intervention through deterministic macro engines, parsing utilities, and format-agnostic converters. Every solution targets measurable throughput gains with zero ambiguity in execution.</p>
+</div>
+<div class="profile-block">
+<h3>Core Metrics</h3>
+<div class="stat-grid">
+<div class="stat-item">
+<div class="stat-value">40+</div>
+<div class="stat-label">Automations Deployed</div>
+</div>
+<div class="stat-item">
+<div class="stat-value">12K+</div>
+<div class="stat-label">Hours Recovered</div>
+</div>
+<div class="stat-item">
+<div class="stat-value">98%</div>
+<div class="stat-label">Error Reduction</div>
+</div>
+<div class="stat-item">
+<div class="stat-value">6</div>
+<div class="stat-label">Languages Active</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="vault">
+<div class="container">
+<div class="section-label">the.vault // automations portfolio</div>
+<div class="vault-controls">
+<button class="filter-btn active" data-filter="all">all</button>
+<button class="filter-btn" data-filter="macro">macros</button>
+<button class="filter-btn" data-filter="script">scripts</button>
+<button class="filter-btn" data-filter="utility">utilities</button>
+<button class="filter-btn" data-filter="pipeline">pipelines</button>
+</div>
+<div class="vault-grid" id="vault-grid">
+
+<div class="vault-card" data-category="macro">
+<div class="vault-card-header">
+<span class="vault-card-title">DataBridge.xlsm</span>
+<span class="vault-card-type">MACRO</span>
+</div>
+<p class="vault-card-desc">Cross-workbook data synchronization engine. Maps disparate column schemas, normalizes formats, and merges records with conflict-resolution logging.</p>
+<div class="vault-card-tags">
+<span class="tag">VBA</span>
+<span class="tag">Excel</span>
+<span class="tag">ETL</span>
+</div>
+<div class="vault-card-actions">
+<a href="#" class="action-link" id="download-databridge">download .xlsm</a>
+<a href="#" class="action-link" id="source-databridge">source</a>
+</div>
+</div>
+
+<div class="vault-card" data-category="script">
+<div class="vault-card-header">
+<span class="vault-card-title">batch-rename-engine</span>
+<span class="vault-card-type">SCRIPT</span>
+</div>
+<p class="vault-card-desc">Recursive file renamer with regex pattern matching, date-stamp injection, and dry-run preview mode. Handles 10K+ file trees in under 3 seconds.</p>
+<div class="vault-card-tags">
+<span class="tag">Python</span>
+<span class="tag">CLI</span>
+<span class="tag">Filesystem</span>
+</div>
+<div class="vault-card-actions">
+<a href="#" class="action-link" id="source-batchrename">source</a>
+<a href="#" class="action-link" id="docs-batchrename">docs</a>
+</div>
+</div>
+
+<div class="vault-card" data-category="utility">
+<div class="vault-card-header">
+<span class="vault-card-title">csv-to-json-converter</span>
+<span class="vault-card-type">UTILITY</span>
+</div>
+<p class="vault-card-desc">Zero-dependency format converter supporting nested object mapping, type inference, and streaming mode for large datasets exceeding available memory.</p>
+<div class="vault-card-tags">
+<span class="tag">JavaScript</span>
+<span class="tag">Node.js</span>
+<span class="tag">Streaming</span>
+</div>
+<div class="vault-card-actions">
+<a href="#" class="action-link" id="source-csvjson">source</a>
+<a href="#" class="action-link" id="npm-csvjson">npm</a>
+</div>
+</div>
+
+<div class="vault-card" data-category="macro">
+<div class="vault-card-header">
+<span class="vault-card-title">ReportForge.xlsm</span>
+<span class="vault-card-type">MACRO</span>
+</div>
+<p class="vault-card-desc">Automated report generation engine. Pulls from multiple data sources, applies conditional formatting matrices, and exports print-ready PDF bundles.</p>
+<div class="vault-card-tags">
+<span class="tag">VBA</span>
+<span class="tag">Excel</span>
+<span class="tag">PDF</span>
+</div>
+<div class="vault-card-actions">
+<a href="#" class="action-link" id="download-reportforge">download .xlsm</a>
+<a href="#" class="action-link" id="source-reportforge">source</a>
+</div>
+</div>
+
+<div class="vault-card" data-category="pipeline">
+<div class="vault-card-header">
+<span class="vault-card-title">log-parser-pipeline</span>
+<span class="vault-card-type">PIPELINE</span>
+</div>
+<p class="vault-card-desc">Multi-stage log ingestion system. Parses unstructured server logs into structured events, flags anomalies via threshold rules, and routes alerts.</p>
+<div class="vault-card-tags">
+<span class="tag">Python</span>
+<span class="tag">Regex</span>
+<span class="tag">SQLite</span>
+</div>
+<div class="vault-card-actions">
+<a href="#" class="action-link" id="source-logparser">source</a>
+<a href="#" class="action-link" id="docs-logparser">docs</a>
+</div>
+</div>
+
+<div class="vault-card" data-category="utility">
+<div class="vault-card-header">
+<span class="vault-card-title">schema-diff-tool</span>
+<span class="vault-card-type">UTILITY</span>
+</div>
+<p class="vault-card-desc">Compares database schemas across environments. Generates migration scripts for detected drift with rollback safety and dependency-aware ordering.</p>
+<div class="vault-card-tags">
+<span class="tag">SQL</span>
+<span class="tag">Python</span>
+<span class="tag">PostgreSQL</span>
+</div>
+<div class="vault-card-actions">
+<a href="#" class="action-link" id="source-schemadiff">source</a>
+</div>
+</div>
+
+<div class="vault-card" data-category="script">
+<div class="vault-card-header">
+<span class="vault-card-title">inbox-zero-automator</span>
+<span class="vault-card-type">SCRIPT</span>
+</div>
+<p class="vault-card-desc">Rule-based email triage system. Classifies incoming messages via pattern matching, auto-labels, archives noise, and surfaces action-required items.</p>
+<div class="vault-card-tags">
+<span class="tag">Python</span>
+<span class="tag">IMAP</span>
+<span class="tag">Automation</span>
+</div>
+<div class="vault-card-actions">
+<a href="#" class="action-link" id="source-inbox">source</a>
+<a href="#" class="action-link" id="docs-inbox">docs</a>
+</div>
+</div>
+
+<div class="vault-card" data-category="pipeline">
+<div class="vault-card-header">
+<span class="vault-card-title">etl-scheduler</span>
+<span class="vault-card-type">PIPELINE</span>
+</div>
+<p class="vault-card-desc">Cron-driven extract-transform-load orchestrator with dependency graph resolution, retry logic, dead-letter queues, and Slack-integrated status reporting.</p>
+<div class="vault-card-tags">
+<span class="tag">Bash</span>
+<span class="tag">Python</span>
+<span class="tag">Cron</span>
+</div>
+<div class="vault-card-actions">
+<a href="#" class="action-link" id="source-etl">source</a>
+<a href="#" class="action-link" id="docs-etl">docs</a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<hr class="divider">
+
+<section class="section" id="connect">
+<div class="container">
+<div class="section-label">connect.matrix</div>
+<div class="connect-grid">
+<a href="https://github.com/nande" class="connect-item" id="link-github" target="_blank" rel="noopener">
+<span class="connect-label">github</span>
+<span class="connect-value">github.com/nande</span>
+</a>
+<a href="https://linkedin.com/in/nande" class="connect-item" id="link-linkedin" target="_blank" rel="noopener">
+<span class="connect-label">linkedin</span>
+<span class="connect-value">linkedin.com/in/nande</span>
+</a>
+<a href="mailto:nande@systems.dev" class="connect-item" id="link-email">
+<span class="connect-label">email</span>
+<span class="connect-value">nande@systems.dev</span>
+</a>
+<a href="#" class="connect-item" id="link-pgp">
+<span class="connect-label">pgp key</span>
+<span class="connect-value">0xAF29...D4E1</span>
+</a>
+</div>
+</div>
+</section>
+
+<hr class="divider">
+
+<footer>
+<div class="container">
+<div class="footer-row">
+<div class="footer-meta">
+<span class="footer-indicator"><span class="dot-green"></span> all systems nominal</span>
+<span class="footer-indicator"><span class="dot-green"></span> uptime 99.97%</span>
+<span class="footer-indicator"><span class="dot-amber"></span> last deploy 2d ago</span>
+</div>
+<div id="utc-clock"></div>
+</div>
+</div>
+</footer>
+
+<script>
+(function(){
+var clockEl=document.getElementById("utc-clock");
+function pad(n){return n<10?"0"+n:n}
+function tick(){
+var d=new Date();
+var y=d.getUTCFullYear();
+var mo=pad(d.getUTCMonth()+1);
+var da=pad(d.getUTCDate());
+var h=pad(d.getUTCHours());
+var mi=pad(d.getUTCMinutes());
+var s=pad(d.getUTCSeconds());
+clockEl.textContent="UTC "+y+"-"+mo+"-"+da+" "+h+":"+mi+":"+s;
+}
+tick();
+setInterval(tick,1000);
+})();
+
+(function(){
+var btns=document.querySelectorAll(".filter-btn");
+var cards=document.querySelectorAll(".vault-card");
+btns.forEach(function(btn){
+btn.addEventListener("click",function(){
+btns.forEach(function(b){b.classList.remove("active")});
+btn.classList.add("active");
+var f=btn.getAttribute("data-filter");
+cards.forEach(function(card){
+if(f==="all"||card.getAttribute("data-category")===f){
+card.style.display="";
+}else{
+card.style.display="none";
+}
+});
+});
+});
+})();
+</script>
+
+</body>
+</html>
