@@ -375,32 +375,32 @@ html{font-size:13px}
 
 <section class="section" id="profile">
 <div class="container">
-<div class="section-label">sys.profile</div>
+<div class="section-label">sys.profile // about me</div>
 <div class="profile-grid">
 <div class="profile-block">
-<h3>Operational Summary</h3>
-<p>Systems-oriented engineer focused on structural problem-solving across data pipelines, spreadsheet automation, and internal tooling. Emphasis on reducing manual intervention through deterministic macro engines, parsing utilities, and format-agnostic converters. Every solution targets measurable throughput gains with zero ambiguity in execution.</p>
+<h3>Identity</h3>
+<p>Chartered Accountant (Final) student based in Bengaluru, operating at the intersection of financial systems and artificial intelligence. Driven by a first-principles philosophy: automate the repetitive, optimize the analytical.</p>
 </div>
 <div class="profile-block">
-<h3>Core Metrics</h3>
+<h3>The Journey</h3>
+<p>What began as curiosity quickly evolved into engineering real-world solutions to eliminate corporate friction. By leveraging advanced automation and Large Language Models (LLMs), I build tools that destroy manual, repetitive burdens&mdash;shifting the human focus from rote data entry to high-value analytical thinking.</p>
+</div>
+<div class="profile-block">
+<h3>Milestones</h3>
 <div class="stat-grid">
 <div class="stat-item">
-<div class="stat-value">40+</div>
-<div class="stat-label">Automations Deployed</div>
+<div class="stat-value" style="font-size:1rem">1st Place</div>
+<div class="stat-label">National CA Students Conference Hackathon (Chennai)</div>
 </div>
 <div class="stat-item">
-<div class="stat-value">12K+</div>
-<div class="stat-label">Hours Recovered</div>
-</div>
-<div class="stat-item">
-<div class="stat-value">98%</div>
-<div class="stat-label">Error Reduction</div>
-</div>
-<div class="stat-item">
-<div class="stat-value">6</div>
-<div class="stat-label">Languages Active</div>
+<div class="stat-value" style="font-size:1rem">Selected</div>
+<div class="stat-label">ICAI National Aurathon AI Hackathon</div>
 </div>
 </div>
+</div>
+<div class="profile-block">
+<h3>The Thesis</h3>
+<p>Artificial Intelligence is drastically more powerful than general assumptions dictate. When properly deployed, it doesn't just assist&mdash;it redefines workflows. This space serves as a terminal to download and access the deterministic automation engines I build to prove that thesis.</p>
 </div>
 </div>
 </div>
@@ -411,151 +411,93 @@ html{font-size:13px}
 <section class="section" id="vault">
 <div class="container">
 <div class="section-label">the.vault // automations portfolio</div>
-<div class="vault-controls">
-<button class="filter-btn active" data-filter="all">all</button>
-<button class="filter-btn" data-filter="macro">macros</button>
-<button class="filter-btn" data-filter="script">scripts</button>
-<button class="filter-btn" data-filter="utility">utilities</button>
-<button class="filter-btn" data-filter="pipeline">pipelines</button>
-</div>
 <div class="vault-grid" id="vault-grid">
 
-<div class="vault-card" data-category="macro">
+<div class="vault-card" data-category="extension">
 <div class="vault-card-header">
-<span class="vault-card-title">DataBridge.xlsm</span>
-<span class="vault-card-type">MACRO</span>
+<span class="vault-card-title">GST Returns Downloader</span>
+<span class="vault-card-type">EXTENSION</span>
 </div>
-<p class="vault-card-desc">Cross-workbook data synchronization engine. Maps disparate column schemas, normalizes formats, and merges records with conflict-resolution logging.</p>
+<p class="vault-card-desc">Download GSTR returns (GSTR1, GSTR2B, GSTR2A, GSTR3B) in bulk using a custom-built browser extension. Fill the access form to get the source code and a full demo video via Google Drive.</p>
 <div class="vault-card-tags">
-<span class="tag">VBA</span>
-<span class="tag">Excel</span>
-<span class="tag">ETL</span>
-</div>
-<div class="vault-card-actions">
-<a href="#" class="action-link" id="download-databridge">download .xlsm</a>
-<a href="#" class="action-link" id="source-databridge">source</a>
-</div>
-</div>
-
-<div class="vault-card" data-category="script">
-<div class="vault-card-header">
-<span class="vault-card-title">batch-rename-engine</span>
-<span class="vault-card-type">SCRIPT</span>
-</div>
-<p class="vault-card-desc">Recursive file renamer with regex pattern matching, date-stamp injection, and dry-run preview mode. Handles 10K+ file trees in under 3 seconds.</p>
-<div class="vault-card-tags">
-<span class="tag">Python</span>
-<span class="tag">CLI</span>
-<span class="tag">Filesystem</span>
-</div>
-<div class="vault-card-actions">
-<a href="#" class="action-link" id="source-batchrename">source</a>
-<a href="#" class="action-link" id="docs-batchrename">docs</a>
-</div>
-</div>
-
-<div class="vault-card" data-category="utility">
-<div class="vault-card-header">
-<span class="vault-card-title">csv-to-json-converter</span>
-<span class="vault-card-type">UTILITY</span>
-</div>
-<p class="vault-card-desc">Zero-dependency format converter supporting nested object mapping, type inference, and streaming mode for large datasets exceeding available memory.</p>
-<div class="vault-card-tags">
-<span class="tag">JavaScript</span>
-<span class="tag">Node.js</span>
-<span class="tag">Streaming</span>
-</div>
-<div class="vault-card-actions">
-<a href="#" class="action-link" id="source-csvjson">source</a>
-<a href="#" class="action-link" id="npm-csvjson">npm</a>
-</div>
-</div>
-
-<div class="vault-card" data-category="macro">
-<div class="vault-card-header">
-<span class="vault-card-title">ReportForge.xlsm</span>
-<span class="vault-card-type">MACRO</span>
-</div>
-<p class="vault-card-desc">Automated report generation engine. Pulls from multiple data sources, applies conditional formatting matrices, and exports print-ready PDF bundles.</p>
-<div class="vault-card-tags">
-<span class="tag">VBA</span>
-<span class="tag">Excel</span>
-<span class="tag">PDF</span>
-</div>
-<div class="vault-card-actions">
-<a href="#" class="action-link" id="download-reportforge">download .xlsm</a>
-<a href="#" class="action-link" id="source-reportforge">source</a>
-</div>
-</div>
-
-<div class="vault-card" data-category="pipeline">
-<div class="vault-card-header">
-<span class="vault-card-title">log-parser-pipeline</span>
-<span class="vault-card-type">PIPELINE</span>
-</div>
-<p class="vault-card-desc">Multi-stage log ingestion system. Parses unstructured server logs into structured events, flags anomalies via threshold rules, and routes alerts.</p>
-<div class="vault-card-tags">
-<span class="tag">Python</span>
-<span class="tag">Regex</span>
-<span class="tag">SQLite</span>
-</div>
-<div class="vault-card-actions">
-<a href="#" class="action-link" id="source-logparser">source</a>
-<a href="#" class="action-link" id="docs-logparser">docs</a>
-</div>
-</div>
-
-<div class="vault-card" data-category="utility">
-<div class="vault-card-header">
-<span class="vault-card-title">schema-diff-tool</span>
-<span class="vault-card-type">UTILITY</span>
-</div>
-<p class="vault-card-desc">Compares database schemas across environments. Generates migration scripts for detected drift with rollback safety and dependency-aware ordering.</p>
-<div class="vault-card-tags">
-<span class="tag">SQL</span>
-<span class="tag">Python</span>
-<span class="tag">PostgreSQL</span>
-</div>
-<div class="vault-card-actions">
-<a href="#" class="action-link" id="source-schemadiff">source</a>
-</div>
-</div>
-
-<div class="vault-card" data-category="script">
-<div class="vault-card-header">
-<span class="vault-card-title">inbox-zero-automator</span>
-<span class="vault-card-type">SCRIPT</span>
-</div>
-<p class="vault-card-desc">Rule-based email triage system. Classifies incoming messages via pattern matching, auto-labels, archives noise, and surfaces action-required items.</p>
-<div class="vault-card-tags">
-<span class="tag">Python</span>
-<span class="tag">IMAP</span>
+<span class="tag">Browser Extension</span>
+<span class="tag">GST</span>
 <span class="tag">Automation</span>
+<span class="tag">Finance</span>
 </div>
 <div class="vault-card-actions">
-<a href="#" class="action-link" id="source-inbox">source</a>
-<a href="#" class="action-link" id="docs-inbox">docs</a>
+<a href="https://forms.gle/7AaFxi9RjqTXbxdW8" class="action-link" id="access-gst-downloader" target="_blank" rel="noopener">request access</a>
 </div>
 </div>
 
-<div class="vault-card" data-category="pipeline">
+<div class="vault-card" data-category="tool">
 <div class="vault-card-header">
-<span class="vault-card-title">etl-scheduler</span>
-<span class="vault-card-type">PIPELINE</span>
+<span class="vault-card-title">TallyBridge</span>
+<span class="vault-card-type">TOOL</span>
 </div>
-<p class="vault-card-desc">Cron-driven extract-transform-load orchestrator with dependency graph resolution, retry logic, dead-letter queues, and Slack-integrated status reporting.</p>
+<p class="vault-card-desc">Bulk suspense clearance for bank statements. Instead of manually clearing entries in Tally, process them in bulk and import directly into Tally using XML format. Eliminates repetitive reconciliation overhead.</p>
 <div class="vault-card-tags">
-<span class="tag">Bash</span>
-<span class="tag">Python</span>
-<span class="tag">Cron</span>
+<span class="tag">Tally</span>
+<span class="tag">XML Import</span>
+<span class="tag">Bank Reconciliation</span>
+<span class="tag">Finance</span>
 </div>
 <div class="vault-card-actions">
-<a href="#" class="action-link" id="source-etl">source</a>
-<a href="#" class="action-link" id="docs-etl">docs</a>
+<a href="https://prowoflowautomationtools.github.io/TallyBridge/TallyBridge.html" class="action-link" id="launch-tallybridge" target="_blank" rel="noopener">launch tool</a>
 </div>
 </div>
 
+<div class="vault-card" data-category="tool">
+<div class="vault-card-header">
+<span class="vault-card-title">GSTR2B Consolidator</span>
+<span class="vault-card-type">TOOL</span>
 </div>
+<p class="vault-card-desc">Consolidate multiple months of GSTR2B data into a single structured Excel file within seconds. Eliminates the manual copy-paste cycle across return periods, drastically reducing processing time and human error in ITC reconciliation.</p>
+<div class="vault-card-tags">
+<span class="tag">Streamlit</span>
+<span class="tag">GST</span>
+<span class="tag">Excel</span>
+<span class="tag">ITC Reconciliation</span>
+</div>
+<div class="vault-card-actions">
+<a href="https://gstr2bconsolidation.streamlit.app/" class="action-link" id="launch-gstr2b-consolidator" target="_blank" rel="noopener">launch tool</a>
+</div>
+</div>
+
+<div class="vault-card" data-category="tool">
+<div class="vault-card-header">
+<span class="vault-card-title">GSTR1 JSON to Excel Converter</span>
+<span class="vault-card-type">TOOL</span>
+</div>
+<p class="vault-card-desc">Convert raw GSTR1 JSON data into a clean, structured Excel file within seconds. Skip the manual formatting grind&mdash;upload the JSON, get a ready-to-use spreadsheet instantly.</p>
+<div class="vault-card-tags">
+<span class="tag">Streamlit</span>
+<span class="tag">GST</span>
+<span class="tag">JSON</span>
+<span class="tag">Excel</span>
+</div>
+<div class="vault-card-actions">
+<a href="https://gstr1-converter-app-dnmwmjrbnvrvnz7ovvp48e.streamlit.app/" class="action-link" id="launch-gstr1-converter" target="_blank" rel="noopener">launch tool</a>
+</div>
+</div>
+
+<div class="vault-card" data-category="tool">
+<div class="vault-card-header">
+<span class="vault-card-title">Bank Statement PDF to Excel</span>
+<span class="vault-card-type">TOOL</span>
+</div>
+<p class="vault-card-desc">Convert bank statement PDFs into structured Excel files for analysis. Upload the PDF, get a clean spreadsheet&mdash;no manual data entry. Currently supports select bank formats, with more being added progressively.</p>
+<div class="vault-card-tags">
+<span class="tag">Streamlit</span>
+<span class="tag">PDF Parsing</span>
+<span class="tag">Excel</span>
+<span class="tag">Banking</span>
+</div>
+<div class="vault-card-actions">
+<a href="https://bankpdftoexcel.streamlit.app/" class="action-link" id="launch-bank-pdf-converter" target="_blank" rel="noopener">launch tool</a>
+</div>
+</div>
+
 </div>
 </section>
 
@@ -565,21 +507,21 @@ html{font-size:13px}
 <div class="container">
 <div class="section-label">connect.matrix</div>
 <div class="connect-grid">
-<a href="https://github.com/nande" class="connect-item" id="link-github" target="_blank" rel="noopener">
+<a href="https://github.com/nandeeshbalekoppadaramane" class="connect-item" id="link-github" target="_blank" rel="noopener">
 <span class="connect-label">github</span>
-<span class="connect-value">github.com/nande</span>
+<span class="connect-value">github.com/nandeeshbalekoppadaramane</span>
 </a>
-<a href="https://linkedin.com/in/nande" class="connect-item" id="link-linkedin" target="_blank" rel="noopener">
+<a href="https://www.linkedin.com/in/nandeesh-balekoppadaramane" class="connect-item" id="link-linkedin" target="_blank" rel="noopener">
 <span class="connect-label">linkedin</span>
-<span class="connect-value">linkedin.com/in/nande</span>
+<span class="connect-value">linkedin.com/in/nandeesh-balekoppadaramane</span>
 </a>
-<a href="mailto:nande@systems.dev" class="connect-item" id="link-email">
+<a href="https://chat.whatsapp.com/K4IDRDWgdED60IgOQ9txEc" class="connect-item" id="link-whatsapp" target="_blank" rel="noopener">
+<span class="connect-label">whatsapp community</span>
+<span class="connect-value">AI &amp; Automation in Finance</span>
+</a>
+<a href="mailto:nandeeshb020304@gmail.com" class="connect-item" id="link-email">
 <span class="connect-label">email</span>
-<span class="connect-value">nande@systems.dev</span>
-</a>
-<a href="#" class="connect-item" id="link-pgp">
-<span class="connect-label">pgp key</span>
-<span class="connect-value">0xAF29...D4E1</span>
+<span class="connect-value">nandeeshb020304@gmail.com</span>
 </a>
 </div>
 </div>
@@ -606,13 +548,14 @@ var clockEl=document.getElementById("utc-clock");
 function pad(n){return n<10?"0"+n:n}
 function tick(){
 var d=new Date();
-var y=d.getUTCFullYear();
-var mo=pad(d.getUTCMonth()+1);
-var da=pad(d.getUTCDate());
-var h=pad(d.getUTCHours());
-var mi=pad(d.getUTCMinutes());
-var s=pad(d.getUTCSeconds());
-clockEl.textContent="UTC "+y+"-"+mo+"-"+da+" "+h+":"+mi+":"+s;
+var ist=new Date(d.getTime()+(5.5*60*60*1000));
+var y=ist.getUTCFullYear();
+var mo=pad(ist.getUTCMonth()+1);
+var da=pad(ist.getUTCDate());
+var h=pad(ist.getUTCHours());
+var mi=pad(ist.getUTCMinutes());
+var s=pad(ist.getUTCSeconds());
+clockEl.textContent="IST "+y+"-"+mo+"-"+da+" "+h+":"+mi+":"+s;
 }
 tick();
 setInterval(tick,1000);
