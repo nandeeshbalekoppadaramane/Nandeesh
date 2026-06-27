@@ -1,602 +1,1154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Systems Engineer — Data Automation, Macro Engineering, and High-Efficiency Tooling Portfolio">
-<title>nande@systems ~ portfolio</title>
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
---bg-primary:#0a0a0a;
---bg-secondary:#111111;
---bg-tertiary:#181818;
---bg-card:#0f0f0f;
---border:#2a2a2a;
---border-active:#3a3a3a;
---text-primary:#d4d4d4;
---text-secondary:#888888;
---text-muted:#555555;
---green:#39ff14;
---green-dim:#1a7a0a;
---amber:#ffbf00;
---amber-dim:#7a5c00;
---red:#ff3333;
---cyan:#00e5ff;
---mono:'Fira Code','JetBrains Mono','Cascadia Code','SF Mono','Consolas','Liberation Mono','Courier New',monospace;
-}
-html{font-size:14px;scroll-behavior:smooth}
-body{
-background:var(--bg-primary);
-color:var(--text-primary);
-font-family:var(--mono);
-line-height:1.7;
-min-height:100vh;
-display:flex;
-flex-direction:column;
--webkit-font-smoothing:antialiased;
-}
-::selection{background:var(--green-dim);color:var(--green)}
-:focus-visible{outline:2px solid var(--green);outline-offset:2px}
-a{color:var(--green);text-decoration:none;transition:color 0s}
-a:hover{color:var(--amber)}
-a:focus-visible{color:var(--amber)}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Nandeesh Balekoppadaramane — Data Architecture, Applied Intelligence, and High-Efficiency Automation Tooling Portfolio">
+    <meta name="author" content="Nandeesh Balekoppadaramane">
+    <meta name="keywords" content="automation, GST, Tally, Python, VBA, data architecture, finance tools">
+    <meta property="og:title" content="Nandeesh Balekoppadaramane — Portfolio">
+    <meta property="og:description"
+        content="Data Architecture & Applied Intelligence. Building lean, programmatic utilities to convert corporate friction into automated scale.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nandeeshbalekoppadaramane.github.io/Nandeesh/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nandeesh Balekoppadaramane — Portfolio">
+    <meta name="twitter:description"
+        content="Data Architecture & Applied Intelligence. Automation tools for finance professionals.">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230a0a0a'/><text x='50' y='68' font-size='55' text-anchor='middle' fill='%2339ff14' font-family='monospace'>N</text></svg>">
+    <title>Nandeesh Balekoppadaramane — Portfolio</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
 
-.container{
-width:100%;
-max-width:1280px;
-margin:0 auto;
-padding:0 24px;
-}
-.divider{
-border:none;
-border-top:1px dashed var(--border);
-margin:0;
-}
-.section{padding:48px 0}
-.section-label{
-font-size:0.75rem;
-color:var(--text-muted);
-letter-spacing:0.15em;
-text-transform:uppercase;
-margin-bottom:24px;
-display:flex;
-align-items:center;
-gap:8px;
-}
-.section-label::before{content:"//";color:var(--green-dim)}
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-tertiary: #181818;
+            --bg-card: #0f0f0f;
+            --border: #2a2a2a;
+            --border-active: #3a3a3a;
+            --text-primary: #d4d4d4;
+            --text-secondary: #888888;
+            --text-muted: #555555;
+            --green: #39ff14;
+            --green-dim: #1a7a0a;
+            --amber: #ffbf00;
+            --amber-dim: #7a5c00;
+            --red: #ff3333;
+            --cyan: #00e5ff;
+            --mono: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', 'SF Mono', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+        }
 
-header{
-border-bottom:1px solid var(--border);
-padding:32px 0;
-}
-.prompt-bar{
-display:flex;
-flex-wrap:wrap;
-align-items:center;
-gap:8px;
-font-size:0.8rem;
-color:var(--text-secondary);
-margin-bottom:24px;
-}
-.prompt-user{color:var(--green)}
-.prompt-path{color:var(--cyan)}
-.prompt-sep{color:var(--text-muted)}
-.status-tag{
-display:inline-flex;
-align-items:center;
-gap:6px;
-padding:2px 10px;
-border:1px solid var(--green-dim);
-font-size:0.7rem;
-color:var(--green);
-letter-spacing:0.05em;
-}
-.status-tag::before{
-content:"";
-width:6px;
-height:6px;
-background:var(--green);
-border-radius:50%;
-animation:pulse-dot 2s ease-in-out infinite;
-}
-@keyframes pulse-dot{
-0%,100%{opacity:1}
-50%{opacity:0.3}
-}
-.headline{
-font-size:clamp(1.4rem,4vw,2.2rem);
-font-weight:700;
-color:var(--text-primary);
-line-height:1.3;
-margin-bottom:8px;
-}
-.headline em{
-font-style:normal;
-color:var(--green);
-}
-.subheadline{
-font-size:0.85rem;
-color:var(--text-secondary);
-max-width:680px;
-}
+        [data-theme="light"] {
+            --bg-primary: #f8f9fa;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #e9ecef;
+            --bg-card: #ffffff;
+            --border: #dee2e6;
+            --border-active: #adb5bd;
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --text-muted: #6c757d;
+            --green: #15803d;
+            --green-dim: #dcfce7;
+            --amber: #d97706;
+            --amber-dim: #fef3c7;
+        }
 
-.profile-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:32px;
-}
-.profile-block h3{
-font-size:0.8rem;
-color:var(--text-muted);
-letter-spacing:0.1em;
-text-transform:uppercase;
-margin-bottom:12px;
-padding-bottom:8px;
-border-bottom:1px solid var(--border);
-}
-.profile-block p{
-font-size:0.85rem;
-color:var(--text-secondary);
-}
-.stat-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:16px;
-}
-.stat-item{
-padding:12px;
-border:1px solid var(--border);
-}
-.stat-value{
-font-size:1.4rem;
-font-weight:700;
-color:var(--text-primary);
-}
-.stat-label{
-font-size:0.7rem;
-color:var(--text-muted);
-text-transform:uppercase;
-letter-spacing:0.08em;
-margin-top:4px;
-}
+        html {
+            font-size: 14px;
+            scroll-behavior: smooth
+        }
 
-.vault-controls{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-bottom:24px;
-}
-.filter-btn{
-background:transparent;
-border:1px solid var(--border);
-color:var(--text-secondary);
-font-family:var(--mono);
-font-size:0.75rem;
-padding:4px 14px;
-cursor:pointer;
-letter-spacing:0.05em;
-transition:border-color 0s,color 0s,background 0s;
-}
-.filter-btn:hover,.filter-btn.active{
-border-color:var(--green);
-color:var(--green);
-background:rgba(57,255,20,0.04);
-}
-.vault-grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(360px,1fr));
-gap:1px;
-background:var(--border);
-border:1px solid var(--border);
-}
-.vault-card{
-background:var(--bg-card);
-padding:20px;
-display:flex;
-flex-direction:column;
-gap:12px;
-transition:background 0s;
-}
-.vault-card:hover{
-background:var(--bg-tertiary);
-}
-.vault-card-header{
-display:flex;
-justify-content:space-between;
-align-items:flex-start;
-gap:12px;
-}
-.vault-card-title{
-font-size:0.9rem;
-font-weight:600;
-color:var(--text-primary);
-}
-.vault-card-type{
-font-size:0.65rem;
-color:var(--amber);
-border:1px solid var(--amber-dim);
-padding:1px 8px;
-white-space:nowrap;
-flex-shrink:0;
-}
-.vault-card-desc{
-font-size:0.78rem;
-color:var(--text-secondary);
-line-height:1.6;
-}
-.vault-card-tags{
-display:flex;
-flex-wrap:wrap;
-gap:6px;
-}
-.tag{
-font-size:0.65rem;
-color:var(--text-muted);
-padding:2px 8px;
-border:1px solid var(--border);
-}
-.vault-card-actions{
-display:flex;
-gap:12px;
-margin-top:auto;
-padding-top:8px;
-border-top:1px dashed var(--border);
-}
-.action-link{
-font-size:0.75rem;
-color:var(--green);
-display:inline-flex;
-align-items:center;
-gap:6px;
-padding:4px 0;
-}
-.action-link:hover{
-color:var(--amber);
-padding-left:4px;
-}
-.action-link::before{content:">";margin-right:2px}
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--mono);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+        }
 
-.connect-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:1px;
-background:var(--border);
-border:1px solid var(--border);
-}
-.connect-item{
-background:var(--bg-card);
-padding:20px;
-display:flex;
-flex-direction:column;
-gap:4px;
-transition:background 0s;
-}
-.connect-item:hover{background:var(--bg-tertiary)}
-.connect-label{
-font-size:0.7rem;
-color:var(--text-muted);
-text-transform:uppercase;
-letter-spacing:0.1em;
-}
-.connect-value{
-font-size:0.85rem;
-color:var(--green);
-}
-.connect-item:hover .connect-value{color:var(--amber)}
+        ::selection {
+            background: var(--green-dim);
+            color: var(--green)
+        }
 
-footer{
-border-top:1px solid var(--border);
-padding:16px 0;
-margin-top:auto;
-}
-.footer-row{
-display:flex;
-flex-wrap:wrap;
-justify-content:space-between;
-align-items:center;
-gap:16px;
-font-size:0.7rem;
-color:var(--text-muted);
-}
-.footer-meta{
-display:flex;
-flex-wrap:wrap;
-gap:20px;
-align-items:center;
-}
-.footer-indicator{
-display:inline-flex;
-align-items:center;
-gap:6px;
-}
-.dot-green{
-width:5px;height:5px;
-background:var(--green);
-border-radius:50%;
-display:inline-block;
-}
-.dot-amber{
-width:5px;height:5px;
-background:var(--amber);
-border-radius:50%;
-display:inline-block;
-}
-#utc-clock{
-font-variant-numeric:tabular-nums;
-color:var(--text-secondary);
-letter-spacing:0.05em;
-}
+        :focus-visible {
+            outline: 2px solid var(--green);
+            outline-offset: 2px
+        }
 
-.cursor-blink::after{
-content:"_";
-animation:blink 1s step-end infinite;
-color:var(--green);
-}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+        a {
+            color: var(--green);
+            text-decoration: none;
+            transition: color 0s
+        }
 
-@media(max-width:768px){
-html{font-size:13px}
-.container{padding:0 16px}
-.section{padding:32px 0}
-.profile-grid{grid-template-columns:1fr}
-.vault-grid{grid-template-columns:1fr}
-.stat-grid{grid-template-columns:1fr 1fr}
-.headline{margin-bottom:12px}
-.connect-grid{grid-template-columns:1fr}
-}
-@media(max-width:480px){
-.stat-grid{grid-template-columns:1fr}
-.vault-card-header{flex-direction:column}
-.footer-row{flex-direction:column;align-items:flex-start}
-}
-</style>
+        a:hover {
+            color: var(--amber)
+        }
+
+        a:focus-visible {
+            color: var(--amber)
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px dashed var(--border);
+            margin: 0;
+        }
+
+        .section {
+            padding: 48px 0
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-label::before {
+            content: "//";
+            color: var(--green-dim)
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 32px 0;
+        }
+
+        .prompt-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .prompt-user {
+            color: var(--green)
+        }
+
+        .prompt-path {
+            color: var(--cyan)
+        }
+
+        .prompt-sep {
+            color: var(--text-muted)
+        }
+
+        .status-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 2px 10px;
+            border: 1px solid var(--green-dim);
+            font-size: 0.7rem;
+            color: var(--green);
+            letter-spacing: 0.05em;
+        }
+
+        .status-tag::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0.3
+            }
+        }
+
+        .headline {
+            font-size: clamp(1.4rem, 4vw, 2.2rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .headline em {
+            font-style: normal;
+            color: var(--green);
+        }
+
+        .subheadline {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            max-width: 680px;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .profile-block h3 {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .profile-block p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .stat-item {
+            padding: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .stat-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 4px;
+        }
+
+        .vault-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            padding: 4px 14px;
+            cursor: pointer;
+            letter-spacing: 0.05em;
+            transition: border-color 0s, color 0s, background 0s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--green);
+            color: var(--green);
+            background: rgba(57, 255, 20, 0.04);
+        }
+
+        .vault-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+        }
+
+        .vault-card {
+            background: var(--bg-card);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: background 0s;
+        }
+
+        .vault-card:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .vault-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .vault-card-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .vault-card-type {
+            font-size: 0.65rem;
+            color: var(--amber);
+            border: 1px solid var(--amber-dim);
+            padding: 1px 8px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .vault-card-desc {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .vault-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            padding: 2px 8px;
+            border: 1px solid var(--border);
+        }
+
+        .vault-card-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: auto;
+            padding-top: 8px;
+            border-top: 1px dashed var(--border);
+        }
+
+        .action-link {
+            font-size: 0.75rem;
+            color: var(--green);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 0;
+        }
+
+        .action-link:hover {
+            color: var(--amber);
+            padding-left: 4px;
+        }
+
+        .action-link::before {
+            content: ">";
+            margin-right: 2px
+        }
+
+        .connect-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+        }
+
+        .connect-item {
+            background: var(--bg-card);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            transition: background 0s;
+        }
+
+        .connect-item:hover {
+            background: var(--bg-tertiary)
+        }
+
+        .connect-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .connect-value {
+            font-size: 0.85rem;
+            color: var(--green);
+        }
+
+        .connect-item:hover .connect-value {
+            color: var(--amber)
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 16px 0;
+            margin-top: auto;
+        }
+
+        .footer-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .footer-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .footer-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dot-green {
+            width: 5px;
+            height: 5px;
+            background: var(--green);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot-amber {
+            width: 5px;
+            height: 5px;
+            background: var(--amber);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        #utc-clock {
+            font-variant-numeric: tabular-nums;
+            color: var(--text-secondary);
+            letter-spacing: 0.05em;
+        }
+
+        .cursor-blink::after {
+            content: "_";
+            animation: blink 1s step-end infinite;
+            color: var(--green);
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0
+            }
+        }
+
+        nav {
+            border-bottom: 1px solid var(--border);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            background: var(--bg-primary);
+            z-index: 100;
+        }
+
+        .nav-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            padding: 4px 12px;
+            border: 1px solid transparent;
+            letter-spacing: 0.05em;
+            transition: color 0s, border-color 0s;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus-visible {
+            color: var(--green);
+            border-color: var(--green);
+        }
+
+        .tech-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .tech-tag {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            padding: 3px 10px;
+            border: 1px solid var(--border);
+            letter-spacing: 0.04em;
+        }
+
+        .vault-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            padding: 4px 14px;
+            cursor: pointer;
+            letter-spacing: 0.05em;
+            transition: border-color 0s, color 0s, background 0s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--green);
+            color: var(--green);
+            background: rgba(57, 255, 20, 0.04);
+        }
+
+        .tool-count {
+            font-size: 0.7rem;
+            color: var(--green);
+            border: 1px solid var(--green-dim);
+            padding: 2px 8px;
+            margin-left: 8px;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 36px;
+            height: 36px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            color: var(--green);
+            font-family: var(--mono);
+            font-size: 1rem;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99;
+            transition: border-color 0s;
+        }
+
+        .scroll-top:hover {
+            border-color: var(--green);
+        }
+
+        .scroll-top.visible {
+            display: flex;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .typing-text {
+            overflow: hidden;
+            border-right: 2px solid var(--green);
+            white-space: nowrap;
+            animation: typing 2.5s steps(38, end) forwards, blink-caret 0.8s step-end infinite;
+            width: 0;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink-caret {
+
+            0%,
+            100% {
+                border-color: var(--green)
+            }
+
+            50% {
+                border-color: transparent
+            }
+        }
+
+        @media(max-width:768px) {
+            html {
+                font-size: 13px
+            }
+
+            .container {
+                padding: 0 16px
+            }
+
+            .section {
+                padding: 32px 0
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr
+            }
+
+            .vault-grid {
+                grid-template-columns: 1fr
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .headline {
+                margin-bottom: 12px
+            }
+
+            .connect-grid {
+                grid-template-columns: 1fr
+            }
+
+            .typing-text {
+                white-space: normal;
+                animation: fade-in 0.5s ease forwards
+            }
+
+            @keyframes fade-in {
+                from {
+                    opacity: 0
+                }
+
+                to {
+                    opacity: 1
+                }
+            }
+        }
+
+        @media(max-width:480px) {
+            .stat-grid {
+                grid-template-columns: 1fr
+            }
+
+            .vault-card-header {
+                flex-direction: column
+            }
+
+            .footer-row {
+                flex-direction: column;
+                align-items: flex-start
+            }
+        }
+
+        .nav-link.active {
+            color: var(--green);
+            border-color: var(--green);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border: 1px solid var(--border-active);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--border-active);
+            border: 1px solid var(--green);
+        }
+
+        #boot-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-primary);
+            color: var(--green);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            font-family: var(--mono);
+            font-size: 1rem;
+            transition: opacity 0.5s ease;
+        }
+
+        #boot-screen p {
+            margin-bottom: 8px;
+        }
+    </style>
+    <script>
+        (function () {
+            var savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                document.documentElement.setAttribute("data-theme", savedTheme);
+            }
+        })();
+    </script>
 </head>
+
 <body>
+    <div id="boot-screen"></div>
 
-<header>
-<div class="container">
-<div class="prompt-bar">
-<span class="prompt-user">nande@systems</span>
-<span class="prompt-sep">:</span>
-<span class="prompt-path">~/portfolio</span>
-<span class="prompt-sep">$</span>
-<span>cat identity.conf</span>
-<span style="margin-left:auto">
-<span class="status-tag">AVAILABLE</span>
-</span>
-</div>
-<h1 class="headline">Data Systems <em>&amp;</em> High-Efficiency<br>Automation Engineering<span class="cursor-blink"></span></h1>
-<p class="subheadline">Building precision tooling that converts manual process overhead into deterministic, scriptable execution paths.</p>
-</div>
-</header>
+    <header>
+        <div class="container">
+            <div class="prompt-bar">
+                <span class="prompt-user">nandeesh@portfolio</span>
+                <span class="prompt-sep">:</span>
+                <span class="prompt-path">~/vault</span>
+                <span class="prompt-sep">$</span>
+                <span>cat identity.conf</span>
+                <span style="margin-left:auto">
+                    <span class="status-tag">AVAILABLE</span>
+                </span>
+            </div>
+            <h1 class="headline">Data Architecture <em>&amp;</em> Applied<br>Intelligence</h1>
+            <p class="subheadline"><span class="typing-text">Building lean, programmatic utilities to convert corporate
+                    friction into automated scale.</span></p>
+        </div>
+    </header>
 
-<hr class="divider">
+    <nav>
+        <div class="container">
+            <div class="nav-inner">
+                <a href="#profile" class="nav-link" id="nav-profile">profile</a>
+                <a href="#vault" class="nav-link" id="nav-vault">vault</a>
+                <a href="#connect" class="nav-link" id="nav-connect">connect</a>
+                <button class="nav-link" id="theme-toggle"
+                    style="margin-left:auto;background:transparent;cursor:pointer;font-family:var(--mono);">[light]</button>
+            </div>
+        </div>
+    </nav>
 
-<section class="section" id="profile">
-<div class="container">
-<div class="section-label">sys.profile // about me</div>
-<div class="profile-grid">
-<div class="profile-block">
-<h3>Identity</h3>
-<p>Chartered Accountant (Final) student based in Bengaluru, operating at the intersection of financial systems and artificial intelligence. Driven by a first-principles philosophy: automate the repetitive, optimize the analytical.</p>
-</div>
-<div class="profile-block">
-<h3>The Journey</h3>
-<p>What began as curiosity quickly evolved into engineering real-world solutions to eliminate corporate friction. By leveraging advanced automation and Large Language Models (LLMs), I build tools that destroy manual, repetitive burdens&mdash;shifting the human focus from rote data entry to high-value analytical thinking.</p>
-</div>
-<div class="profile-block">
-<h3>Milestones</h3>
-<div class="stat-grid">
-<div class="stat-item">
-<div class="stat-value" style="font-size:1rem">1st Place</div>
-<div class="stat-label">National CA Students Conference Hackathon (Chennai)</div>
-</div>
-<div class="stat-item">
-<div class="stat-value" style="font-size:1rem">Selected</div>
-<div class="stat-label">ICAI National Aurathon AI Hackathon</div>
-</div>
-</div>
-</div>
-<div class="profile-block">
-<h3>The Thesis</h3>
-<p>Artificial Intelligence is drastically more powerful than general assumptions dictate. When properly deployed, it doesn't just assist&mdash;it redefines workflows. This space serves as a terminal to download and access the deterministic automation engines I build to prove that thesis.</p>
-</div>
-</div>
-</div>
-</section>
+    <hr class="divider">
 
-<hr class="divider">
+    <section class="section" id="profile">
+        <div class="container">
+            <div class="section-label">sys.profile // about me</div>
+            <div class="profile-grid">
+                <div class="profile-block">
+                    <h3>Identity</h3>
+                    <p>Chartered Accountant (Final) student based in Bengaluru, operating at the intersection of
+                        financial systems and artificial intelligence. Driven by a first-principles philosophy: automate
+                        the repetitive, optimize the analytical.</p>
+                </div>
+                <div class="profile-block">
+                    <h3>The Journey</h3>
+                    <p>What began as curiosity quickly evolved into engineering real-world solutions to eliminate
+                        corporate friction. By leveraging advanced automation and Large Language Models (LLMs), I build
+                        tools that destroy manual, repetitive burdens&mdash;shifting the human focus from rote data
+                        entry to high-value analytical thinking.</p>
+                </div>
+                <div class="profile-block">
+                    <h3>Milestones</h3>
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" style="font-size:1rem">1st Place</div>
+                            <div class="stat-label">National CA Students Conference Hackathon (Chennai)</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" style="font-size:1rem">Selected</div>
+                            <div class="stat-label">ICAI National Aurathon AI Hackathon</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-block">
+                    <h3>The Thesis</h3>
+                    <p>Artificial Intelligence is drastically more powerful than general assumptions dictate. When
+                        properly deployed, it doesn't just assist&mdash;it redefines workflows. This space serves as a
+                        terminal to download and access the deterministic automation engines I build to prove that
+                        thesis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="section" id="vault">
-<div class="container">
-<div class="section-label">the.vault // automations portfolio</div>
-<div class="vault-grid" id="vault-grid">
+    <hr class="divider">
 
-<div class="vault-card" data-category="extension">
-<div class="vault-card-header">
-<span class="vault-card-title">GST Returns Downloader</span>
-<span class="vault-card-type">EXTENSION</span>
-</div>
-<p class="vault-card-desc">Download GSTR returns (GSTR1, GSTR2B, GSTR2A, GSTR3B) in bulk using a custom-built browser extension. Fill the access form to get the source code and a full demo video via Google Drive.</p>
-<div class="vault-card-tags">
-<span class="tag">Browser Extension</span>
-<span class="tag">GST</span>
-<span class="tag">Automation</span>
-<span class="tag">Finance</span>
-</div>
-<div class="vault-card-actions">
-<a href="https://forms.gle/7AaFxi9RjqTXbxdW8" class="action-link" id="access-gst-downloader" target="_blank" rel="noopener">request access</a>
-</div>
-</div>
+    <section class="section" id="vault">
+        <div class="container">
+            <div class="section-label">the.vault // automations portfolio <span class="tool-count"
+                    id="tool-count"></span></div>
+            <div class="vault-controls">
+                <button class="filter-btn active" data-filter="all">all</button>
+                <button class="filter-btn" data-filter="extension">extensions</button>
+                <button class="filter-btn" data-filter="tool">tools</button>
+                <button class="filter-btn" data-filter="script">scripts</button>
+            </div>
+            <div class="vault-grid" id="vault-grid">
 
-<div class="vault-card" data-category="tool">
-<div class="vault-card-header">
-<span class="vault-card-title">TallyBridge</span>
-<span class="vault-card-type">TOOL</span>
-</div>
-<p class="vault-card-desc">Bulk suspense clearance for bank statements. Instead of manually clearing entries in Tally, process them in bulk and import directly into Tally using XML format. Eliminates repetitive reconciliation overhead.</p>
-<div class="vault-card-tags">
-<span class="tag">Tally</span>
-<span class="tag">XML Import</span>
-<span class="tag">Bank Reconciliation</span>
-<span class="tag">Finance</span>
-</div>
-<div class="vault-card-actions">
-<a href="https://prowoflowautomationtools.github.io/TallyBridge/TallyBridge.html" class="action-link" id="launch-tallybridge" target="_blank" rel="noopener">launch tool</a>
-</div>
-</div>
+                <div class="vault-card" data-category="extension">
+                    <div class="vault-card-header">
+                        <span class="vault-card-title">GST Returns Downloader</span>
+                        <span class="vault-card-type">EXTENSION</span>
+                    </div>
+                    <p class="vault-card-desc">Download GSTR returns (GSTR1, GSTR2B, GSTR2A, GSTR3B) in bulk using a
+                        custom-built browser extension. Fill the access form to get the source code and a full demo
+                        video via Google Drive.</p>
+                    <div class="vault-card-tags">
+                        <span class="tag">Browser Extension</span>
+                        <span class="tag">GST</span>
+                        <span class="tag">Automation</span>
+                        <span class="tag">Finance</span>
+                    </div>
+                    <div class="vault-card-actions">
+                        <a href="https://forms.gle/7AaFxi9RjqTXbxdW8" class="action-link" id="access-gst-downloader"
+                            target="_blank" rel="noopener">request access</a>
+                    </div>
+                </div>
 
-<div class="vault-card" data-category="tool">
-<div class="vault-card-header">
-<span class="vault-card-title">GSTR2B Consolidator</span>
-<span class="vault-card-type">TOOL</span>
-</div>
-<p class="vault-card-desc">Consolidate multiple months of GSTR2B data into a single structured Excel file within seconds. Eliminates the manual copy-paste cycle across return periods, drastically reducing processing time and human error in ITC reconciliation.</p>
-<div class="vault-card-tags">
-<span class="tag">Streamlit</span>
-<span class="tag">GST</span>
-<span class="tag">Excel</span>
-<span class="tag">ITC Reconciliation</span>
-</div>
-<div class="vault-card-actions">
-<a href="https://gstr2bconsolidation.streamlit.app/" class="action-link" id="launch-gstr2b-consolidator" target="_blank" rel="noopener">launch tool</a>
-</div>
-</div>
+                <div class="vault-card" data-category="tool">
+                    <div class="vault-card-header">
+                        <span class="vault-card-title">TallyBridge</span>
+                        <span class="vault-card-type">TOOL</span>
+                    </div>
+                    <p class="vault-card-desc">Bulk suspense clearance for bank statements. Instead of manually clearing
+                        entries in Tally, process them in bulk and import directly into Tally using XML format.
+                        Eliminates repetitive suspense clearance overhead.</p>
+                    <div class="vault-card-tags">
+                        <span class="tag">Tally</span>
+                        <span class="tag">XML Import</span>
+                        <span class="tag">Bank Suspense Clearnance</span>
+                        <span class="tag">Finance</span>
+                    </div>
+                    <div class="vault-card-actions">
+                        <a href="https://prowoflowautomationtools.github.io/TallyBridge/TallyBridge.html"
+                            class="action-link" id="launch-tallybridge" target="_blank" rel="noopener">launch tool</a>
+                    </div>
+                </div>
 
-<div class="vault-card" data-category="tool">
-<div class="vault-card-header">
-<span class="vault-card-title">GSTR1 JSON to Excel Converter</span>
-<span class="vault-card-type">TOOL</span>
-</div>
-<p class="vault-card-desc">Convert raw GSTR1 JSON data into a clean, structured Excel file within seconds. Skip the manual formatting grind&mdash;upload the JSON, get a ready-to-use spreadsheet instantly.</p>
-<div class="vault-card-tags">
-<span class="tag">Streamlit</span>
-<span class="tag">GST</span>
-<span class="tag">JSON</span>
-<span class="tag">Excel</span>
-</div>
-<div class="vault-card-actions">
-<a href="https://gstr1-converter-app-dnmwmjrbnvrvnz7ovvp48e.streamlit.app/" class="action-link" id="launch-gstr1-converter" target="_blank" rel="noopener">launch tool</a>
-</div>
-</div>
+                <div class="vault-card" data-category="tool">
+                    <div class="vault-card-header">
+                        <span class="vault-card-title">GSTR2B Consolidator</span>
+                        <span class="vault-card-type">TOOL</span>
+                    </div>
+                    <p class="vault-card-desc">Consolidate multiple months of GSTR2B data into a single structured Excel
+                        file within seconds. Eliminates the manual copy-paste cycle across return periods, drastically
+                        reducing processing time and human error.</p>
+                    <div class="vault-card-tags">
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">GST</span>
+                        <span class="tag">Excel</span>
+                        <span class="tag">ITC Consolidation</span>
+                    </div>
+                    <div class="vault-card-actions">
+                        <a href="https://gstr2bconsolidation.streamlit.app/" class="action-link"
+                            id="launch-gstr2b-consolidator" target="_blank" rel="noopener">launch tool</a>
+                    </div>
+                </div>
 
-<div class="vault-card" data-category="tool">
-<div class="vault-card-header">
-<span class="vault-card-title">Bank Statement PDF to Excel</span>
-<span class="vault-card-type">TOOL</span>
-</div>
-<p class="vault-card-desc">Convert bank statement PDFs into structured Excel files for analysis. Upload the PDF, get a clean spreadsheet&mdash;no manual data entry. Currently supports select bank formats, with more being added progressively.</p>
-<div class="vault-card-tags">
-<span class="tag">Streamlit</span>
-<span class="tag">PDF Parsing</span>
-<span class="tag">Excel</span>
-<span class="tag">Banking</span>
-</div>
-<div class="vault-card-actions">
-<a href="https://bankpdftoexcel.streamlit.app/" class="action-link" id="launch-bank-pdf-converter" target="_blank" rel="noopener">launch tool</a>
-</div>
-</div>
+                <div class="vault-card" data-category="tool">
+                    <div class="vault-card-header">
+                        <span class="vault-card-title">GSTR1 JSON to Excel Converter</span>
+                        <span class="vault-card-type">TOOL</span>
+                    </div>
+                    <p class="vault-card-desc">Convert raw GSTR1 JSON data into a clean, structured Excel file within
+                        seconds. Skip the manual formatting grind&mdash;upload the JSON, get a ready-to-use spreadsheet
+                        instantly.</p>
+                    <div class="vault-card-tags">
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">GST</span>
+                        <span class="tag">JSON</span>
+                        <span class="tag">Excel</span>
+                    </div>
+                    <div class="vault-card-actions">
+                        <a href="https://gstr1-converter-app-dnmwmjrbnvrvnz7ovvp48e.streamlit.app/" class="action-link"
+                            id="launch-gstr1-converter" target="_blank" rel="noopener">launch tool</a>
+                    </div>
+                </div>
 
-<div class="vault-card" data-category="script">
-<div class="vault-card-header">
-<span class="vault-card-title">UDIN Extractor</span>
-<span class="vault-card-type">SCRIPT</span>
-</div>
-<p class="vault-card-desc">Extract UDIN numbers from scanned PDF reports using OCR. Handles multiple UDIN formats (18-digit alphanumeric), outputs results to Excel, and auto-sorts failed extractions for review.</p>
-<div class="vault-card-tags">
-<span class="tag">Python</span>
-<span class="tag">OCR</span>
-<span class="tag">PDF</span>
-<span class="tag">UDIN</span>
-</div>
-<div class="vault-card-actions">
-<a href="downloads/extract_udin.py" class="action-link" id="download-udin-extractor" download>download .py</a>
-</div>
-</div>
+                <div class="vault-card" data-category="tool">
+                    <div class="vault-card-header">
+                        <span class="vault-card-title">Bank Statement PDF to Excel</span>
+                        <span class="vault-card-type">TOOL</span>
+                    </div>
+                    <p class="vault-card-desc">Convert bank statement PDFs into structured Excel files for analysis.
+                        Upload the PDF, get a clean spreadsheet&mdash;no manual data entry. Currently supports select
+                        bank formats, with more being added progressively.</p>
+                    <div class="vault-card-tags">
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">PDF Parsing</span>
+                        <span class="tag">Excel</span>
+                        <span class="tag">Banking</span>
+                    </div>
+                    <div class="vault-card-actions">
+                        <a href="https://bankpdftoexcel.streamlit.app/" class="action-link"
+                            id="launch-bank-pdf-converter" target="_blank" rel="noopener">launch tool</a>
+                    </div>
+                </div>
 
-</div>
-</section>
+                <div class="vault-card" data-category="script">
+                    <div class="vault-card-header">
+                        <span class="vault-card-title">UDIN Extractor</span>
+                        <span class="vault-card-type">SCRIPT</span>
+                    </div>
+                    <p class="vault-card-desc">Extract UDIN numbers from scanned PDF reports using OCR. Handles multiple
+                        UDIN formats (18-digit alphanumeric), outputs results to Excel, and auto-sorts failed
+                        extractions for review.</p>
+                    <div class="vault-card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">OCR</span>
+                        <span class="tag">PDF</span>
+                        <span class="tag">UDIN</span>
+                    </div>
+                    <div class="vault-card-actions">
+                        <a href="downloads/extract_udin.py" class="action-link" id="download-udin-extractor"
+                            download>download .py</a>
+                    </div>
+                </div>
 
-<hr class="divider">
+            </div>
+    </section>
 
-<section class="section" id="connect">
-<div class="container">
-<div class="section-label">connect.matrix</div>
-<div class="connect-grid">
-<a href="https://github.com/nandeeshbalekoppadaramane" class="connect-item" id="link-github" target="_blank" rel="noopener">
-<span class="connect-label">github</span>
-<span class="connect-value">github.com/nandeeshbalekoppadaramane</span>
-</a>
-<a href="https://www.linkedin.com/in/nandeesh-balekoppadaramane" class="connect-item" id="link-linkedin" target="_blank" rel="noopener">
-<span class="connect-label">linkedin</span>
-<span class="connect-value">linkedin.com/in/nandeesh-balekoppadaramane</span>
-</a>
-<a href="https://chat.whatsapp.com/K4IDRDWgdED60IgOQ9txEc" class="connect-item" id="link-whatsapp" target="_blank" rel="noopener">
-<span class="connect-label">whatsapp community</span>
-<span class="connect-value">AI &amp; Automation in Finance</span>
-</a>
-<a href="mailto:nandeeshb020304@gmail.com" class="connect-item" id="link-email">
-<span class="connect-label">email</span>
-<span class="connect-value">nandeeshb020304@gmail.com</span>
-</a>
-</div>
-</div>
-</section>
+    <hr class="divider">
 
-<hr class="divider">
+    <section class="section" id="connect">
+        <div class="container">
+            <div class="section-label">connect.matrix</div>
+            <div class="connect-grid">
+                <a href="https://github.com/nandeeshbalekoppadaramane" class="connect-item" id="link-github"
+                    target="_blank" rel="noopener">
+                    <span class="connect-label">github</span>
+                    <span class="connect-value">github.com/nandeeshbalekoppadaramane</span>
+                </a>
+                <a href="https://www.linkedin.com/in/nandeesh-balekoppadaramane" class="connect-item" id="link-linkedin"
+                    target="_blank" rel="noopener">
+                    <span class="connect-label">linkedin</span>
+                    <span class="connect-value">linkedin.com/in/nandeesh-balekoppadaramane</span>
+                </a>
+                <a href="https://chat.whatsapp.com/K4IDRDWgdED60IgOQ9txEc" class="connect-item" id="link-whatsapp"
+                    target="_blank" rel="noopener">
+                    <span class="connect-label">whatsapp community</span>
+                    <span class="connect-value">AI &amp; Automation in Finance</span>
+                </a>
+                <a href="mailto:nandeeshb020304@gmail.com" class="connect-item" id="link-email">
+                    <span class="connect-label">email</span>
+                    <span class="connect-value">nandeeshb020304@gmail.com</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-<footer>
-<div class="container">
-<div class="footer-row">
-<div class="footer-meta">
-<span class="footer-indicator"><span class="dot-green"></span> all systems nominal</span>
-<span class="footer-indicator"><span class="dot-green"></span> uptime 99.97%</span>
-<span class="footer-indicator"><span class="dot-amber"></span> last deploy 2d ago</span>
-</div>
-<div id="utc-clock"></div>
-</div>
-</div>
-</footer>
+    <hr class="divider">
 
-<script>
-(function(){
-var clockEl=document.getElementById("utc-clock");
-function pad(n){return n<10?"0"+n:n}
-function tick(){
-var d=new Date();
-var ist=new Date(d.getTime()+(5.5*60*60*1000));
-var y=ist.getUTCFullYear();
-var mo=pad(ist.getUTCMonth()+1);
-var da=pad(ist.getUTCDate());
-var h=pad(ist.getUTCHours());
-var mi=pad(ist.getUTCMinutes());
-var s=pad(ist.getUTCSeconds());
-clockEl.textContent="IST "+y+"-"+mo+"-"+da+" "+h+":"+mi+":"+s;
-}
-tick();
-setInterval(tick,1000);
-})();
 
-(function(){
-var btns=document.querySelectorAll(".filter-btn");
-var cards=document.querySelectorAll(".vault-card");
-btns.forEach(function(btn){
-btn.addEventListener("click",function(){
-btns.forEach(function(b){b.classList.remove("active")});
-btn.classList.add("active");
-var f=btn.getAttribute("data-filter");
-cards.forEach(function(card){
-if(f==="all"||card.getAttribute("data-category")===f){
-card.style.display="";
-}else{
-card.style.display="none";
-}
-});
-});
-});
-})();
-</script>
+
+    <footer>
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-meta">
+                    <span class="footer-indicator"><span class="dot-green"></span> all systems nominal</span>
+                    <span class="footer-indicator"><span class="dot-green"></span> uptime 99.99%</span>
+                </div>
+                <div id="utc-clock"></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">&uarr;</button>
+
+    <script>
+        (function () {
+            var clockEl = document.getElementById("utc-clock");
+            function pad(n) { return n < 10 ? "0" + n : n }
+            function tick() {
+                var d = new Date();
+                var ist = new Date(d.getTime() + (5.5 * 60 * 60 * 1000));
+                var y = ist.getUTCFullYear();
+                var mo = pad(ist.getUTCMonth() + 1);
+                var da = pad(ist.getUTCDate());
+                var h = pad(ist.getUTCHours());
+                var mi = pad(ist.getUTCMinutes());
+                var s = pad(ist.getUTCSeconds());
+                clockEl.textContent = "IST " + y + "-" + mo + "-" + da + " " + h + ":" + mi + ":" + s;
+            }
+            tick();
+            setInterval(tick, 1000);
+        })();
+
+        (function () {
+            var btns = document.querySelectorAll(".filter-btn");
+            var cards = document.querySelectorAll(".vault-card");
+            var countEl = document.getElementById("tool-count");
+            countEl.textContent = cards.length + " tools deployed";
+            btns.forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    btns.forEach(function (b) { b.classList.remove("active") });
+                    btn.classList.add("active");
+                    var f = btn.getAttribute("data-filter");
+                    var shown = 0;
+                    cards.forEach(function (card) {
+                        if (f === "all" || card.getAttribute("data-category") === f) {
+                            card.style.display = "";
+                            shown++;
+                        } else {
+                            card.style.display = "none";
+                        }
+                    });
+                    countEl.textContent = shown + " tools deployed";
+                });
+            });
+        })();
+
+        (function () {
+            var scrollBtn = document.getElementById("scroll-top");
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 400) { scrollBtn.classList.add("visible") } else { scrollBtn.classList.remove("visible") }
+            });
+            scrollBtn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }) });
+        })();
+
+        (function () {
+            var reveals = document.querySelectorAll(".section");
+            var navLinks = document.querySelectorAll(".nav-link:not(#theme-toggle)");
+            reveals.forEach(function (el) { el.classList.add("reveal") });
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        var id = entry.target.getAttribute("id");
+                        navLinks.forEach(function (link) {
+                            if (link.getAttribute("href") === "#" + id) {
+                                link.classList.add("active");
+                            } else {
+                                link.classList.remove("active");
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.2 });
+            reveals.forEach(function (el) { observer.observe(el) });
+        })();
+
+        (function () {
+            var themeToggle = document.getElementById("theme-toggle");
+            var currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+
+            function updateButtonText(theme) {
+                themeToggle.textContent = theme === "light" ? "[dark]" : "[light]";
+            }
+
+            updateButtonText(currentTheme);
+
+            themeToggle.addEventListener("click", function () {
+                var newTheme = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+                document.documentElement.setAttribute("data-theme", newTheme);
+                localStorage.setItem("theme", newTheme);
+                updateButtonText(newTheme);
+            });
+        })();
+
+        (function () {
+            var links = document.querySelectorAll('.action-link');
+            var chars = '!<>-_\\/[]{}—=+*^?#_';
+            links.forEach(function (link) {
+                var originalText = link.textContent;
+                link.addEventListener('mouseenter', function () {
+                    var iterations = 0;
+                    var interval = setInterval(function () {
+                        link.textContent = link.textContent.split('').map(function (char, index) {
+                            if (index < iterations) return originalText[index];
+                            return chars[Math.floor(Math.random() * chars.length)];
+                        }).join('');
+                        if (iterations >= originalText.length) {
+                            clearInterval(interval);
+                            link.textContent = originalText;
+                        }
+                        iterations += 1 / 2;
+                    }, 30);
+                });
+            });
+        })();
+
+        (function () {
+            var bootScreen = document.getElementById('boot-screen');
+            if (bootScreen) {
+                var lines = [
+                    "> Initializing environment... [OK]",
+                    "> Loading modules... [OK]",
+                    "> Mounting sys.profile... [OK]",
+                    "> Access granted."
+                ];
+                var delay = 0;
+                lines.forEach(function (line) {
+                    setTimeout(function () {
+                        var p = document.createElement('p');
+                        p.textContent = line;
+                        bootScreen.appendChild(p);
+                    }, delay);
+                    delay += 300;
+                });
+                setTimeout(function () {
+                    bootScreen.style.opacity = '0';
+                    setTimeout(function () { bootScreen.remove(); }, 500);
+                }, delay + 400);
+            }
+        })();
+
+
+    </script>
 
 </body>
+
 </html>
